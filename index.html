@@ -1,63 +1,454 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>LifeLift Hub</title>
-         <link rel="icon" type="image/x-icon" href="\Images\Uplifting Logo for Lifelift Hub.png">
-         <link rel="stylesheet" href="css/main.css">
-        <meta name="Keywords" content="Financial aid,NGOs,Learn Skills,No Poverty,Health,Quality Education,Food banks,Help,Decent work,Health tips,Hire someone,Help Me Now,Shelters,Short,Visual skill lessons">
-        <meta name="Description" content="LifeLift Hub is an all-in-one digital platform designed to break the cycle of poverty by connecting people to urgent resources, free skill training, local job opportunities, and essential health support — all in one place, optimized for mobile and low-data environments.Built to align with multiple UN Sustainable Development Goals — including No Poverty (SDG 1), Quality Education (SDG 4), Decent Work & Economic Growth (SDG 8), and Good Health & Well-being (SDG 3) — LifeLift Hub transforms help-seeking into action in just three clicks.Whether it’s finding the nearest food bank, learning a new skill through gamified lessons, applying for a local gig via WhatsApp, or instantly accessing health advice and mental health hotlines, LifeLift Hub works where people already are and ensures that support is fast, accessible, and impactful.With its sleek, interactive design and real-time impact tracking, LifeLift Hub isn’t just a website — it’s a lifeline, turning compassion into measurable change.">
-    </head>
-    <body>
-      <div class="heading">
-        <img class="logo" src="Images\lifelift hub logo.png" style="height: 70px; width: 70px;">
-        <h2>Life Lift HUB</h2>
-      </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="No Poverty/Poverty.html">No Poverty</a></li>
-            <li><a href="Zero Hunger/hunger.html">Zero Hunger</a></li>
-            <li><a href="Education/Education.html">Education</a></li>
-            <li><a href="Jobs/Jobs.html">Jobs</a></li>
-            <li><a href="Health Care/Health.html">Health Care</a></li>
-        </ul>
-          <Img src="images/SDGlogo.png" style="width:100px;height:auto;">
-            <h1>Mission</h1>
-           <p>Life Lift Hub exists to bridge the gap between opportunity and accessibility. Our mission is to empower individuals and communities by providing resources in education, health, food security, and employment. Through innovation, collaboration, and sustainability, we aim to create lasting change that uplifts lives and builds a more equitable world.<br>We believe that by tackling interconnected challenges holistically, communities can rise stronger, independent, and prepared for the future.</p> 
-           <ol>
-              <li>
-                <h2>No poverty</h2>
-                <img src="goal.png" style="max-width:250px;height:100px;">
-                <p>Poverty remains one of the greatest barriers to human dignity and progress. Life Lift Hub is committed to breaking this cycle by creating pathways for financial inclusion, access to essential resources, and sustainable opportunities for vulnerable communities.<br>Through innovative programs and partnerships, we work to empower individuals with the tools, knowledge, and support they need to rise above poverty and build resilient, self-sustaining lives.</p>
-              <button onclick="">No poverty</button>
-              </li>
-              <li>
-                <h3>Zero hunger</h3>
-                <img src="goal.png" style="max-width:250px;height:100px;">
-                <p>Food is a fundamental human right, yet millions still go without daily nourishment. At Life Lift Hub, we envision a future where no family sleeps hungry. Our focus is on sustainable food systems, community farming initiatives, and equitable distribution channels that ensure access to nutritious food for all.<br>By addressing both hunger and malnutrition, we help communities achieve food security, reduce dependence on aid, and build stronger, healthier generations.</p><br>
-              <button onclick="">Zero hunger</button>
-              </li>
-             <li>
-                <h5>Quality Education</h5>
-                <img src="goal.png" style="max-width:250px;height:100px;">
-                <p>Education is the foundation of opportunity. Life Lift Hub provides access to quality learning, digital literacy, and vocational training to equip individuals with the skills needed in a modern, global economy.<br>We believe education should be inclusive and accessible to all — empowering youth, women, and marginalized groups to innovate, create, and lead their communities toward a brighter future.</p>
-              <button onclick="Education/education.html">Education</button>
-              </li>
-              <li>
-                <h6>Jobs</h6>
-                <img src="goal.png" style="max-width:250px;height:100px;">
-                <p>Decent work is not just employment — it is the foundation of dignity and independence. Life Lift Hub focuses on creating fair job opportunities, supporting small businesses, and promoting entrepreneurship as a driver of sustainable growth.<br>By linking job seekers to employers, providing career mentorship, and fostering innovation, we ensure that communities have the chance to thrive in an economy that works for everyone.</p>
-              <button onclick="Jobs/jobs.html">Jobs</button>
-              </li>
-              <li>
-                <h6>Health Care</h6>
-                <img src="goal.png" style="max-width:250px;height:100px;">
-                <p>Health is wealth, and without it, communities cannot prosper. Life Lift Hub is committed to making healthcare accessible, affordable, and community-driven. From preventive care to health education, we aim to strengthen local health systems and promote well-being for all.<br>By addressing healthcare disparities, we not only save lives but also empower individuals to live with dignity, resilience, and hope for the future.</p>
-              <button onclick="health.html">Jobs</button>
-              </li>
-           </ol>
-           <footer id="About us">About</footer>
-          <p>Life Lift Hub is more than a project — it is a movement of empowerment. Rooted in the values of sustainability, equity, and innovation, we work alongside communities to address the most pressing global challenges identified by the United Nations Sustainable Development Goals.<br>Our approach integrates poverty reduction, hunger eradication, education, healthcare, and job creation into one interconnected platform. By leveraging technology and community partnerships, we provide people with access to opportunities that transform lives. At Life Lift Hub, we don’t just provide solutions — we build pathways for individuals and communities to rise, thrive, and inspire lasting impact.</p>  
 
-           
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLift Hub - Breaking the Cycle of Poverty</title>
+    <link rel="icon" type="image/x-icon" href="/Images/Uplifting Logo for Lifelift Hub.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="keywords" content="Financial aid,NGOs,Learn Skills,No Poverty,Health,Quality Education,Food banks,Help,Decent work,Health tips,Hire someone,Help Me Now,Shelters,Short,Visual skill lessons">
+    <meta name="description" content="LifeLift Hub is an all-in-one digital platform designed to break the cycle of poverty by connecting people to urgent resources, free skill training, local job opportunities, and essential health support.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .heading h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #ffd166;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 3px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.7);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        .sdg-logo {
+            margin-top: 30px;
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .mission h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .mission p {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        /* Goals Section */
+        .goals {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .goals-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .goal-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .goal-content {
+            padding: 25px;
+        }
+        
+        .goal-card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .goal-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .goal-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .goal-btn {
+            display: inline-block;
+            background: #4a6580;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .goal-btn:hover {
+            background: #2c3e50;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .about p {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                background: #2c3e50;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .heading {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .heading h2 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="heading">
+                <img class="logo" src="\Images\lifelift hub logo.png" alt="Life Lift HUB Logo">
+                <h2>Life Lift HUB</h2>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="No Poverty/Poverty.html"><i class="fas fa-hand-holding-heart"></i> No Poverty</a></li>
+                    <li><a href="Zero Hunger/hunger.html"><i class="fas fa-utensils"></i> Zero Hunger</a></li>
+                    <li><a href="Education/Education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="Jobs/Jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+                    <li><a href="Health Care/Health.html"><i class="fas fa-heartbeat"></i> Health Care</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Breaking the Cycle of Poverty</h1>
+            <p>Connecting communities to resources, education, jobs, and healthcare for sustainable development</p>
+            <div class="sdg-logo">
+                <img src="https://placehold.co/100x100/2c3e50/white?text=SDG" alt="SDG Logo" style="width:100px;height:auto;">
+            </div>
+        </div>
+    </section>
+    
+    <section class="mission">
+        <div class="container">
+            <h1>Our Mission</h1>
+            <p>Life Lift Hub exists to bridge the gap between opportunity and accessibility. Our mission is to empower individuals and communities by providing resources in education, health, food security, and employment. Through innovation, collaboration, and sustainability, we aim to create lasting change that uplifts lives and builds a more equitable world.<br><br>We believe that by tackling interconnected challenges holistically, communities can rise stronger, independent, and prepared for the future.</p>
+        </div>
+    </section>
+    
+    <section class="goals">
+        <div class="container">
+            <div class="goals-list">
+                <div class="goal-card">
+                    <img src="https://placehold.co/600x400/2c3e50/white?text=No+Poverty" alt="No Poverty">
+                    <div class="goal-content">
+                        <h2>No Poverty</h2>
+                        <p>Poverty remains one of the greatest barriers to human dignity and progress. Life Lift Hub is committed to breaking this cycle by creating pathways for financial inclusion, access to essential resources, and sustainable opportunities for vulnerable communities.</p>
+                        <a href="No Poverty/Poverty.html" class="goal-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <img src="https://placehold.co/600x400/2c3e50/white?text=Zero+Hunger" alt="Zero Hunger">
+                    <div class="goal-content">
+                        <h2>Zero Hunger</h2>
+                        <p>Food is a fundamental human right, yet millions still go without daily nourishment. At Life Lift Hub, we envision a future where no family sleeps hungry. Our focus is on sustainable food systems and community farming initiatives.</p>
+                        <a href="Zero Hunger/hunger.html" class="goal-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <img src="https://placehold.co/600x400/2c3e50/white?text=Education" alt="Quality Education">
+                    <div class="goal-content">
+                        <h2>Quality Education</h2>
+                        <p>Education is the foundation of opportunity. Life Lift Hub provides access to quality learning, digital literacy, and vocational training to equip individuals with the skills needed in a modern, global economy.</p>
+                        <a href="Education/Education.html" class="goal-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <img src="https://placehold.co/600x400/2c3e50/white?text=Jobs" alt="Decent Work">
+                    <div class="goal-content">
+                        <h2>Decent Work</h2>
+                        <p>Decent work is not just employment — it is the foundation of dignity and independence. Life Lift Hub focuses on creating fair job opportunities, supporting small businesses, and promoting entrepreneurship.</p>
+                        <a href="Jobs/Jobs.html" class="goal-btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="goal-card">
+                    <img src="https://placehold.co/600x400/2c3e50/white?text=Healthcare" alt="Health Care">
+                    <div class="goal-content">
+                        <h2>Health Care</h2>
+                        <p>Health is wealth, and without it, communities cannot prosper. Life Lift Hub is committed to making healthcare accessible, affordable, and community-driven. From preventive care to health education.</p>
+                        <a href="Health Care/Health.html" class="goal-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="container">
+            <h2>About LifeLift Hub</h2>
+            <p>Life Lift Hub is more than a project — it is a movement of empowerment. Rooted in the values of sustainability, equity, and innovation, we work alongside communities to address the most pressing global challenges identified by the United Nations Sustainable Development Goals.<br><br>Our approach integrates poverty reduction, hunger eradication, education, healthcare, and job creation into one interconnected platform. By leveraging technology and community partnerships, we provide people with access to opportunities that transform lives. At Life Lift Hub, we don't just provide solutions — we build pathways for individuals and communities to rise, thrive, and inspire lasting impact.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 LifeLift Hub. All rights reserved. Together we can break the cycle of poverty and build a more equitable world.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+    </script>
+</body>
 </html>
