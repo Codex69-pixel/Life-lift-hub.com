@@ -155,6 +155,12 @@
         .help-card {
             border-left: 4px solid var(--primary-color);
         }
+        #button{
+            border-radius: 8px;
+            margin: auto;
+            background-color:lightskyblue;
+            padding: 5px;
+        }
         
         .emergency-help {
             background-color:white;
@@ -174,6 +180,7 @@
             align-items: center;
             color: #2e59d9;
             background-color: #f8f9fc;
+            text-align: center;
         }
         
         footer {
@@ -372,7 +379,7 @@
             </div>
             
             <div class="text-center mt-4">
-                <a href="https://heconsulting.us/top-10-international-non-governmental-organizations-ngos-in-kenya/" class="btn btn-outline-primary">View All NGOs</a>
+                <a href="https://www.google.com/search?q=ngos+kenya&sca_esv=a07d3ce3eab5b463&sxsrf=AE3TifN3gvVv_KwezKx3rt_nVjCtdeabNA%3A1759134554715&ei=WkPaaPKvK_mihbIP3_aO4QY&ved=0ahUKEwjyxPvxxv2PAxV5UUEAHV-7I2wQ4dUDCBA&uact=5&oq=ngos+kenya&gs_lp=Egxnd3Mtd2l6LXNlcnAiCm5nb3Mga2VueWEyCxAAGIAEGJECGIoFMgcQABipBhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkiS0QFQ3KIBWLLLAXACeAGQAQCYAZQCoAHuFKoBBDItMTK4AQPIAQD4AQGYAg2gAsIUwgIKEAAYsAMY1gQYR8ICDRAAGIAEGLADGEMYigXCAgoQIxiABBgnGIoFwgILEAAYgAQYkgMYigXCAgoQABiABBhDGIoFwgIKEAAYgAQYFBiHAsICBRAAGIAEwgIIEAAYgAQYkgPCAgQQIxgnmAMAiAYBkAYKkgcGMi4wLjExoAfaUbIHBDItMTG4B7QUwgcIMC4xLjIuMTDIB38&sclient=gws-wiz-serp" class="btn btn-outline-primary">View All NGOs</a>
             </div>
         </section>
 
@@ -415,6 +422,8 @@
 
         <!-- Donation Form -->
         <section class="mb-5">
+            <form action="https://api.web3forms.com/submit" method="POST"></form>
+            <input type="hidden" name="access_key" value="232bfcc2-e7e4-4ec5-9963-01b97ed77cd9"> 
             <h2 class="section-title">Make a Donation</h2>
             <p class="mb-4">Your support can make a difference in the fight against poverty in Kenya.</p>
             
@@ -464,7 +473,7 @@
                                 </div>
                                 
                                 <div class="donate">
-                                    <button type="button" onclick="myfunction()">Donate Now</button>
+                                    <button id="button" type="button" onclick="myfunction()">Donate Now</button>
                                     <p id="submit "></p>
                                 </div>
                             </form>
@@ -476,6 +485,8 @@
 
         <!-- Chama/Savings Form -->
         <section class="mb-5">
+            <form action="https://api.web3forms.com/submit" method="POST"></form>
+             <input type="hidden" name="access_key" value="232bfcc2-e7e4-4ec5-9963-01b97ed77cd9"> 
             <h2 class="section-title">Community Savings (Chama)</h2>
             <p class="mb-4">Start or join a community savings group to better manage your finances collectively.</p>
             
@@ -515,24 +526,10 @@
                             </div>
                             
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success">Create Chama Plan</button>
+                                <button type="submit" class="btn btn-success"> Create Chama Plan</button>
                             </div>
                         </form>
                     </div>
-                    
-                    <div class="mt-4">
-                        <h4>Chama Management Tools</h4>
-                        <div class="d-flex flex-wrap gap-3 mt-3">
-                            <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-calculator me-2"></i>Contribution Calculator
-                            </a>
-                            <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-file-alt me-2"></i>Savings Tracking
-                            </a>
-                            <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-hand-holding-usd me-2"></i>Loan Management
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -562,7 +559,7 @@
             </div>
             <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
             <div class="text-center">
-                <p>&copy; 2023 LifeLift Hub. All rights reserved.</p>
+                <p>&copy; 2025 LifeLift Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
