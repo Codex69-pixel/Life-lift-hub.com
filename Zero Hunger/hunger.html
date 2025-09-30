@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hunger Aid Organizations in kenya</title>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/x-icon" href="\Images\lifelift hub logo.png">
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+               /* Header and Navigation */
+        header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .heading h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #ffd166;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 3px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+            /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                background: #2c3e50;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .heading {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .heading h2 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+/*The second set of css start*/
+         body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .search-filter {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #2e8b57;
+            color: white;
+            border-color: #2e8b57;
+        }
+
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .org-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .org-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            padding: 20px;
+            background: #2e8b57;
+            color: white;
+        }
+
+        .org-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .org-mission {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #2e8b57;
+            margin-top: 3px;
+            min-width: 20px;
+        }
+
+        .card-footer {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #2e8b57;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-btn:hover {
+            background: #1a5d1a;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .search-filter {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                min-width: 100%;
+            }
+        }
+        </style>
+    </head>
+    <body>
+     <header>
+        <div class="container header-content">
+            <div class="heading">
+                <img class="logo" src="\Images\lifelift hub logo.png" alt="Life Lift HUB Logo">
+                <h2>Life Lift HUB</h2>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="../No Poverty/Poverty.html"><i class="fas fa-hand-holding-heart"></i> No Poverty</a></li>
+                    <li><a href="hunger.html"><i class="fas fa-utensils"></i> Zero Hunger</a></li>
+                    <li><a href="../Education/Education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="../Jobs/Jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+                    <li><a href="../Health Care/Health.html"><i class="fas fa-heartbeat"></i> Health Care</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+     <div class="container">
+        <div class="search-filter">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search organizations...">
+            </div>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="emergency">Emergency Relief</button>
+                <button class="filter-btn" data-filter="food-waste">Food Waste</button>
+                <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+            </div>
+        </div>
+
+        <div class="org-grid" id="orgContainer">
+            <!-- Organizations will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>Information compiled from public sources. Please verify details directly with organizations.</p>
+        <p>© 2023 Hunger Aid Kenya Information Portal</p>
+    </footer>
+     <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+    </script>
+     <script>
+        // Organization data
+        const organizations = [
+            {
+                name: "World Food Programme (WFP) Kenya",
+                mission: "Helps with food assistance, emergencies, and humanitarian relief.",
+                category: "emergency",
+                contact: [
+                    { type: "address", value: "United Nations Complex, Gigiri, Nairobi, P.O. Box 44482 – 00100" },
+                    { type: "phone", value: "+254 20 7622310" },
+                    { type: "phone", value: "Free phone line: +254 800-722446" },
+                    { type: "sms", value: "+254 707-722446" },
+                    { type: "email", value: "kenya.feedback@wfp.org" }
+                ],
+                website: "https://www.wfp.org/countries/kenya"
+            },
+            {
+                name: "Food Banking Kenya",
+                mission: "Collects surplus food and distributes to those in need; tackles food waste; helps vulnerable communities.",
+                category: "food-waste",
+                contact: [
+                    { type: "address", value: "Northern Bypass, near Two Rivers Mall, Nairobi, P.O. Box 966-00517" },
+                    { type: "phone", value: "+254 714 963 809" },
+                    { type: "email", value: "info@foodbankingkenya.org" }
+                ],
+                website: "https://foodbankingkenya.org/"
+            },
+            {
+                name: "Action Against Hunger – Kenya",
+                mission: "Nutrition services, emergency relief (food, water, health), and resilience/climate‐smart farming.",
+                category: "nutrition",
+                contact: [
+                     { type: "address", value: "OLD DAGORETTI ESTATE,GATE, OFF Ngong Rd, Nairobi" },
+                    { type: "email", value: "info@actionagainisthunger.org" },
+                    { type: "phone", value: "+1-877-777-1420" },
+                ],
+                website: "https://www.actionagainsthunger.org/country/africa/kenya/"
+            },
+            {
+                name: "Baitulmaal",
+                mission: "Distributes food packages, supports nutritional needs among Kenyan families.",
+                category: "nutrition",
+                contact: [
+                    { type: "email", value: "info@baitulmaal.org" },
+                    { type: "social", value: "Instagram / Facebook: @baitulmaal_usa" }
+                ],
+                website: "https://baitulmaal.org/"
+            },
+            {
+                name: "Food for the Hungry (FH Kenya)",
+                mission: "Works with drought‐affected and marginalized communities; supports food security, clean water, livelihoods.",
+                category: "emergency",
+                contact: [
+                    { type: "info", value: "Operates in Marsabit and Meru Counties." }
+                ],
+                website: "https://www.fh.org/our-work/where-we-work/kenya/"
+            },
+            {
+                name: "Feed the Children",
+                mission: "Provides school feeding programs, nutrition and food aid in both urban and rural settings (Turkana, Samburu, Kajiado counties).",
+                category: "nutrition",
+                contact: [
+                    { type: "info", value: "Not currently located in kenya but aid in : Kajiado,Turkana and Samburu" },
+                    { type: "phone", value: " 1-800-627-4556" },
+                    { type: "email", value: " info@feedthechildren.org" }
+                ],
+                website: "https://www.feedthechildren.org/where-we-work/africa/kenya/"
+            },
+            {
+                name: "Food for Education Foundation",
+                mission: "Prepares meals, feeds children; helps schools.",
+                category: "nutrition",
+                contact: [
+                    { type: "address", value: "Muthangari Drive, 5th Floor, Nairobi, Nairobi 00607" },
+                    { type: "phone", value: "071 3379230" },
+                    { type: "email", value: "info@food4education.org" }
+                ],
+                website: "https://food4education.org/"
+            },
+            {
+                name: "TechnoServe Kenya",
+                mission: "Helps smallholder farmers, improves agricultural productivity, reduces food insecurity via market‐based interventions.",
+                category: "food-waste",
+                contact: [
+                    { type: "address", value: "The Oval, 7th Floor, Ring Road, Parklands, Nairobi" },
+                    { type: "phone", value: "+254 20 3754333" },
+                    { type: "fax", value: "+254 20 3751028" }
+                ],
+                website: "https://www.technoserve.org/where-we-work/kenya/"
+            }
+        ];
+
+        // Function to render organizations
+        function renderOrganizations(orgs) {
+            const container = document.getElementById('orgContainer');
+            container.innerHTML = '';
+
+            if (orgs.length === 0) {
+                container.innerHTML = '<div class="no-results">No organizations found matching your search criteria.</div>';
+                return;
+            }
+
+            orgs.forEach(org => {
+                const orgCard = document.createElement('div');
+                orgCard.className = 'org-card';
+                orgCard.setAttribute('data-category', org.category);
+
+                // Get icon based on contact type
+                function getIcon(type) {
+                    switch(type) {
+                        case 'address': return 'fa-map-marker-alt';
+                        case 'phone': return 'fa-phone';
+                        case 'email': return 'fa-envelope';
+                        case 'sms': return 'fa-comment';
+                        case 'fax': return 'fa-fax';
+                        case 'social': return 'fa-share-alt';
+                        default: return 'fa-info-circle';
+                    }
+                }
+
+                let contactHTML = '';
+                org.contact.forEach(contact => {
+                    contactHTML += `
+                        <div class="contact-item">
+                            <i class="fas ${getIcon(contact.type)}"></i>
+                            <span>${contact.value}</span>
+                        </div>
+                    `;
+                });
+
+                orgCard.innerHTML = `
+                    <div class="card-header">
+                        <h3 class="org-name">${org.name}</h3>
+                        <p class="org-mission">${org.mission}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-info">
+                            ${contactHTML}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="${org.website}" class="contact-btn" target="_blank">Visit Website</a>
+                    </div>
+                `;
+
+                container.appendChild(orgCard);
+            });
+        }
+
+        // Initial render
+        renderOrganizations(organizations);
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const filteredOrgs = organizations.filter(org => 
+                org.name.toLowerCase().includes(searchTerm) || 
+                org.mission.toLowerCase().includes(searchTerm)
+            );
+            renderOrganizations(filteredOrgs);
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                
+                let filteredOrgs = organizations;
+                
+                // Apply search filter if any
+                if (searchTerm) {
+                    filteredOrgs = filteredOrgs.filter(org => 
+                        org.name.toLowerCase().includes(searchTerm) || 
+                        org.mission.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                // Apply category filter
+                if (filter !== 'all') {
+                    filteredOrgs = filteredOrgs.filter(org => org.category === filter);
+                }
+                
+                renderOrganizations(filteredOrgs);
+            });
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLift Hub - No Poverty Initiative</title>
+    <link rel="icon" type="../image/x-icon" href="\Images\lifelift hub logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --dark-color: #2e59d9;
+            --light-color: #f8f9fc;
+        }
+         header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .heading h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #ffd166;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 3px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        } 
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f9fc;
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .card-feature {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .card-feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+        }
+        
+        .btn-success {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .help-card {
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .emergency-help {
+            background-color:white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .chama-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        }
+        .donate{
+            align-items: center;
+            color: #2e59d9;
+            background-color: #f8f9fc;
+        }
+        
+        footer {
+            background-color: #4e73df;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+           /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                background: #2c3e50;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .heading {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .heading h2 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="heading">
+                <img class="logo" src="\Images\lifelift hub logo.png" alt="Life Lift HUB Logo">
+                <h2>Life Lift HUB</h2>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Poverty.html"><i class="fas fa-hand-holding-heart"></i> No Poverty</a></li>
+                    <li><a href="../Zero Hunger/hunger.html"><i class="fas fa-utensils"></i> Zero Hunger</a></li>
+                    <li><a href="../Education/Education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="../Jobs/Jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+                    <li><a href="../Health Care/Health.html"><i class="fas fa-heartbeat"></i> Health Care</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Emergency Help Section -->
+        <div class="emergency-help" id="emergency-help">
+            <h3 class="mb-4"><i class="fas fa-ambulance me-2"></i>Immediate Help Finder</h3>
+            <p class="mb-4">Tell us what you need help with, and we'll connect you with organizations that can provide immediate assistance.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">What type of help do you need?</label>
+                        <select class="form-select" id="help-type">
+                            <option selected>Select assistance type</option>
+                            <option value="food">Food Assistance</option>
+                            <option value="shelter">Shelter/Housing</option>
+                            <option value="medical">Medical Care</option>
+                            <option value="financial">Financial Assistance</option>
+                            <option value="education">Education Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Your location (County)</label>
+                        <select class="form-select" id="county">
+                            <option selected>Select your county</option>
+                            <option>Nairobi</option>
+                            <option>Mombasa</option>
+                            <option>Kisumu</option>
+                            <option>Nakuru</option>
+                            <option>Uasin Gishu</option>
+                            <option>Kiambu</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="find-help-btn">Find Help Now</button>
+                </div>
+                
+                <div class="col-md-6">
+                    <div id="help-results" class="mt-4 mt-md-0">
+                        <div class="card help-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Your assistance results will appear here</h5>
+                                <p class="card-text">Select your needs and location, then click "Find Help Now" to see organizations that can assist you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NGO Directory -->
+        <section class="mb-5">
+            <h2 class="section-title">Local NGOs in Kenya</h2>
+            <p class="mb-4">These organizations provide various forms of assistance to those in need across Kenya.</p>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card card-feature h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">The Food Bank Kenya</h5>
+                            <p class="card-text">Provides food assistance to vulnerable communities across Kenya.</p>
+                            <p><i class="fas fa-phone me-2"></i>+254 700 123 456</p>
+                            <p><i class="fas fa-envelope me-2"></i>info@foodbankkenya.org</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card card-feature h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Shelter for Hope</h5>
+                            <p class="card-text">Provides temporary housing and shelter for homeless families.</p>
+                            <p><i class="fas fa-phone me-2"></i>+254 722 987 654</p>
+                            <p><i class="fas fa-envelope me-2"></i>help@shelterforhope.co.ke</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Mombasa, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card card-feature h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Health for All Kenya</h5>
+                            <p class="card-text">Offers free medical services and health education in underserved communities.</p>
+                            <p><i class="fas fa-phone me-2"></i>+254 733 456 789</p>
+                            <p><i class="fas fa-envelope me-2"></i>contact@healthforall.org</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Kisumu, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://heconsulting.us/top-10-international-non-governmental-organizations-ngos-in-kenya/" class="btn btn-outline-primary">View All NGOs</a>
+            </div>
+        </section>
+
+        <!-- Children's Homes -->
+        <section class="mb-5">
+            <h2 class="section-title">Children's Homes & Orphanages</h2>
+            <p class="mb-4">These homes provide care and support for vulnerable children across Kenya.</p>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card card-feature h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Hope Children's Home</h5>
+                            <p class="card-text">Caring for orphaned and vulnerable children in Nairobi since 2005.</p>
+                            <p><i class="fas fa-phone me-2"></i>+254 20 123 4567</p>
+                            <p><i class="fas fa-envelope me-2"></i>hope@childrenshome.org</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Nairobi, Kenya</p>
+                            <a href="https://www.google.com/aclk?sa=L&ai=DChsSEwiu1s-GjuWPAxUtgoMHHXwjMsIYACICCAEQABoCZWY&co=1&ase=2&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cdli9JNh5OnWYEJ6jdyM9i2He0oh-vuZG3QOiMP70sk11cgru_PbVcaAtrrEALw_wcB&ei=h3LNaOfYFtS6i-gPgMLIsAQ&cce=2&category=acrcp_v1_32&sig=AOD64_1A5Y_0lMNFhI6tYPiKe63utE0kSQ&q&sqi=2&nis=4&adurl&ved=2ahUKEwinuMiGjuWPAxVU3QIHHQAhEkYQ0Qx6BAgUEAE" class="btn btn-sm btn-outline-primary">Contact This Home</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card card-feature h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">New Life Orphanage</h5>
+                            <p class="card-text">Providing a loving home and education for children in Nakuru.</p>
+                            <p><i class="fas fa-phone me-2"></i>+254 51 234 5678</p>
+                            <p><i class="fas fa-envelope me-2"></i>info@newlifeorphanage.co.ke</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>Nakuru, Kenya</p>
+                            <a href="https://newlifehometrust.org/" class="btn btn-sm btn-outline-primary">Contact This Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                          <a href="https://www.google.com/search?q=children+homes&oq=&gs_lcrp=EgZjaHJvbWUqDAgBECMYJxjqAhitBjIMCAAQIxgnGOoCGK0GMgwIARAjGCcY6gIYrQYyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgwIBBAjGCcY6gIYrQYyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gIyFQgIEAAYQhiRAhi0AhjqAhiABBiKBTIVCAkQABhCGJECGLQCGOoCGIAEGIoFMhUIChAAGEIYkQIYtAIY6gIYgAQYigUyFQgLEAAYQhiRAhi0AhjqAhiABBiKBdIBCTIwOThqMGoxNagCDLACAfEFyIya2IWNOww&sourceid=chrome&ie=UTF-8" class="btn btn-outline-primary">View All Children Homes</a>
+            </div>
+        </section>
+
+        <!-- Donation Form -->
+        <section class="mb-5">
+            <h2 class="section-title">Make a Donation</h2>
+            <p class="mb-4">Your support can make a difference in the fight against poverty in Kenya.</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card card-feature">
+                        <div class="card-body">
+                            <form id="donation-form">
+                                <div class="mb-3">
+                                    <label class="form-label">Select Organization to Support</label>
+                                    <select class="form-select">
+                                        <option selected>Choose an organization</option>
+                                        <option>The Food Bank Kenya</option>
+                                        <option>Shelter for Hope</option>
+                                        <option>Health for All Kenya</option>
+                                        <option>Hope Children's Home</option>
+                                        <option>New Life Orphanage</option>
+                                        <option>Where most needed</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Donation Amount (KES)</label>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="button" class="btn btn-outline-primary">500</button>
+                                        <button type="button" class="btn btn-outline-primary">1,000</button>
+                                        <button type="button" class="btn btn-outline-primary">2,000</button>
+                                        <button type="button" class="btn btn-outline-primary">5,000</button>
+                                        <div class="input-group" style="width: 150px;">
+                                            <span class="input-group-text">Other</span>
+                                            <input type="number" class="form-control" placeholder="Amount">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Donation Frequency</label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="frequency" id="one-time" checked>
+                                            <label class="form-check-label" for="one-time">One-time</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="frequency" id="monthly">
+                                            <label class="form-check-label" for="monthly">Monthly</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="donate">
+                                    <button type="button" onclick="myfunction()">Donate Now</button>
+                                    <p id="submit "></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chama/Savings Form -->
+        <section class="mb-5">
+            <h2 class="section-title">Community Savings (Chama)</h2>
+            <p class="mb-4">Start or join a community savings group to better manage your finances collectively.</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="chama-form">
+                        <form id="chama-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Chama Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your chama name">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Number of Members</label>
+                                    <input type="number" class="form-control" placeholder="How many members?">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Monthly Contribution (KES)</label>
+                                <input type="number" class="form-control" placeholder="Amount each member contributes">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Contribution Frequency</label>
+                                <select class="form-select">
+                                    <option selected>How often do members contribute?</option>
+                                    <option>Weekly</option>
+                                    <option>Bi-weekly</option>
+                                    <option>Monthly</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Chama Goals</label>
+                                <textarea class="form-control" rows="3" placeholder="What are the goals of your chama?"></textarea>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Create Chama Plan</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4>Chama Management Tools</h4>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-calculator me-2"></i>Contribution Calculator
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-file-alt me-2"></i>Savings Tracking
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-hand-holding-usd me-2"></i>Loan Management
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer style="align-items: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>LifeLift Hub</h5>
+                    <p>Connecting communities to end poverty in Kenya through collaboration and support.</p>
+                </div>
+                
+            <div class="col-md-4 mb-4 mb-md-0">
+                    
+
+                    <img src="\Images\E_SDG_logo_Square_Transparent_WEB.png.png" alt="SDG Logo" style="width:200px;height:auto;">
+            </div>
+            <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-phone me-2"></i>+254 700 000 000</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@lifelifthub.org</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Nairobi, Kenya</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p>&copy; 2023 LifeLift Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //Donation form
+        function myfunction() {
+        document.getElementById("submit").innerHTML="paybil number 714777 <br>Account no 0792629643 " ; 
+        }
+        document.getElementById("demo").innerHTML = myFunction(); 
+        
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+    
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple functionality for the immediate help finder
+        document.getElementById('find-help-btn').addEventListener('click', function() {
+            const helpType = document.getElementById('help-type').value;
+            const county = document.getElementById('county').value;
+            
+            if (helpType === 'Select assistance type' || county === 'Select your county') {
+                alert('Please select both your need and location to find help.');
+                return;
+            }
+            
+            const helpResults = document.getElementById('help-results');
+            helpResults.innerHTML = `
+                <div class="card help-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Organizations that can help with ${helpType} in ${county}:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">The Food Bank Kenya - +254 700 123 456</li>
+                            <li class="list-group-item">County ${county} Social Services - 0722 000 000</li>
+                            <li class="list-group-item">Kenya Red Cross Society - 0700 000 000</li>
+                        </ul>
+                        <p class="mt-3">For immediate assistance, please call the numbers above.</p>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // Simple donation amount buttons
+        document.querySelectorAll('.btn-outline-primary').forEach(button => {
+            if (!isNaN(button.textContent.replace(',', ''))) {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.btn-outline-primary').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            }
+        });
+    </script>
+       <!--code injected by live-server-->
+    <script>
+    	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
