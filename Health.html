@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="\Images\lifelift hub logo.png">
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+               /* Header and Navigation */
+        header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .heading h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #ffd166;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 3px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+            /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 100px;
+                left: -100%;
+                background: #2c3e50;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .heading {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .heading h2 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        /*Second Set of Css*/
+         /* Base Styles */
+        :root {
+            --primary: #2a7de1;
+            --primary-dark: #1a5bb8;
+            --secondary: #34c759;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        
+        /* Section Styles */
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Emergency Section */
+        .emergency-alert {
+            background-color: #ffe6e6;
+            border-left: 5px solid var(--danger);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .emergency-alert h3 {
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .helplines {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .helpline-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .helpline-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .helpline-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .helpline-card h3 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .helpline-card .number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 0.5rem 0;
+        }
+        
+        .helpline-card .description {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Clinic Finder */
+        .clinic-finder {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .finder-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .finder-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .finder-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .finder-form button:hover {
+            background: var(--primary-dark);
+        }
+        
+        .results {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        
+        .result-item {
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+        }
+        
+        .result-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Health Tools */
+        .health-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .tool-body {
+            padding: 1.5rem;
+        }
+        
+        .bmi-calculator input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .bmi-calculator button {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .bmi-calculator button:hover {
+            background: #2a9e46;
+        }
+        
+        .bmi-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f0f7ff;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        
+        .external-tool {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .external-tool a {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .external-tool a:hover {
+            background: var(--primary-dark);
+        }
+   
+        /* Health Library */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-img {
+            height: 180px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+        }
+        
+        .article-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .article-content a i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .article-content a:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #aaa;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 2rem 0;
+            }
+            
+            .finder-form {
+                flex-direction: column;
+            }
+            
+            .finder-form input, .finder-form button {
+                width: 100%;
+            }
+        }
+        </style>
+    </head>
+    <body>
+     <header>
+        <div class="container header-content">
+            <div class="heading">
+                <img class="logo" src="\Images\lifelift hub logo.png" alt="Life Lift HUB Logo">
+                <h2>Life Lift HUB</h2>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="../No Poverty/Poverty.html"><i class="fas fa-hand-holding-heart"></i> No Poverty</a></li>
+                    <li><a href="../Zero Hunger/hunger.html"><i class="fas fa-utensils"></i> Zero Hunger</a></li>
+                    <li><a href="../Education/Education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="../Jobs/Jobs.html"><i class="fas fa-briefcase"></i> Jobs</a></li>
+                    <li><a href="Health.html"><i class="fas fa-heartbeat"></i> Health Care</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Emergency Resources Section -->
+    <section id="emergency">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Help & Emergency Resources</h2>
+                <p>Immediate assistance when you need it most</p>
+            </div>
+            
+            <div class="emergency-alert">
+                <h3><i class="fas fa-exclamation-triangle"></i> In a life-threatening emergency, call 911 or your local emergency number immediately.</h3>
+            </div>
+            
+            <div class="helplines">
+                <div class="helpline-card">
+                    <h3><i class="fas fa-life-ring"></i> National Suicide Prevention Lifeline</h3>
+                    <div class="number">988</div>
+                    <p class="description">Free, confidential support 24/7 for people in distress</p>
+                </div>
+                
+                <div class="helpline-card">
+                    <h3><i class="fas fa-shield-alt"></i> Substance Abuse Helpline</h3>
+                    <div class="number">1-800-662-HELP (4357)</div>
+                    <p class="description">SAMHSA's free, confidential treatment referral and information service</p>
+                </div>
+                
+                <div class="helpline-card">
+                    <h3><i class="fas fa-home"></i> National Domestic Violence Hotline</h3>
+                    <div class="number">1-800-799-7233</div>
+                    <p class="description">24/7 support for anyone affected by domestic violence</p>
+                </div>
+                
+                <div class="helpline-card">
+                    <h3><i class="fas fa-comment-medical"></i> Crisis Text Line</h3>
+                    <div class="number">Text HOME to 741741</div>
+                    <p class="description">Free, 24/7 crisis support via text message</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Local Care Section -->
+    <section id="local-care">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Local Care</h2>
+                <p>Locate low-cost health centers in your area</p>
+            </div>
+            
+            <div class="clinic-finder">
+                <div class="finder-form">
+                    <input type="text" id="zipcode" placeholder="Enter your ZIP code">
+                    <input type="text" id="city" placeholder="Or enter your city">
+                    <button id="search-clinics">Search Health Centers</button>
+                </div>
+                
+                <div class="results">
+                    <p>Enter your location above to find health centers near you.</p>
+                    <!-- Results will be populated here by JavaScript -->
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 1rem; color: var(--gray);">
+                <i class="fas fa-info-circle"></i> This tool helps you find federally qualified health centers that provide care on a sliding fee scale based on income.
+            </p>
+        </div>
+    </section>
+
+    <!-- Understand Your Health Section -->
+    <section id="health-tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Understand Your Health</h2>
+                <p>Tools and resources to help you make informed health decisions</p>
+            </div>
+            
+            <div class="health-tools">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3><i class="fas fa-calculator"></i> BMI Calculator</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="bmi-calculator">
+                            <input type="number" id="height" placeholder="Height in centimeters">
+                            <input type="number" id="weight" placeholder="Weight in kilograms">
+                            <button id="calculate-bmi">Calculate BMI</button>
+                            <div class="bmi-result" id="bmi-result">
+                                <!-- BMI result will appear here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3><i class="fas fa-stethoscope"></i> Symptom Checker</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="external-tool">
+                            <p>Check your symptoms using AI DXGPT trusted tool</p>
+                            <a href="https://dxgpt.app/?gad_source=1&gad_campaignid=22143667638&gbraid=0AAAAA-skLxtRsmNFEpqypuv9bpQ6XPo2Q&gclid=Cj0KCQjw3OjGBhDYARIsADd-uX5jH20GctAqxS-z5xZnSdL1MfGFU6R7PImHB7MH0q7EyqXydjRwq2YaAgqCEALw_wcBhttps://dxgpt.app/?gad_source=1&gad_campaignid=22143667638&gbraid=0AAAAA-skLxtRsmNFEpqypuv9bpQ6XPo2Q&gclid=Cj0KCQjw3OjGBhDYARIsADd-uX5jH20GctAqxS-z5xZnSdL1MfGFU6R7PImHB7MH0q7EyqXydjRwq2YaAgqCEALw_wcB" target="_blank">Check Symptoms with AI DXGPT <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3><i class="fas fa-book-medical"></i> Health Articles</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="external-tool">
+                            <p>Browse our library of health education articles</p>
+                            <a href="#health-library">Browse Health Articles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Library Section -->
+    <section id="health-library">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Health Library</h2>
+                <p>Helpful guides from Life Lift Hub</p>
+            </div>
+            
+            <div class="article-grid">
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="../Images\ImageForArticle_26617_1759111248555424.webp"alt="image for article"style="height: 290px;width:auto;">
+                    </div>
+                    <div class="article-content">
+                        <h3>Health Benefits of Zinc and How to Get Enough from Diet</h3>
+                        <p>Zinc plays a crucial role in maintaining physiological homeostasis, functioning as a catalytic and structural cofactor for hundreds of enzymes, regulating immune signaling, and safeguarding genomic stability. It also influences growth, neurological development, reproduction, and skin health, reflecting its broad physiological necessity. Because humans lack specialized zinc storage systems, a continuous dietary supply is required to sustain optimal zinc status.</p>
+                        <a href="https://www.news-medical.net/health/Health-Benefits-of-Zinc-and-How-to-Get-Enough-from-Diet.aspx">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="../Images\ImageForNews_820082_17588735627795616.webp"alt="Image for water article"style="height:290px;width:auto;">
+                    </div>
+                    <div class="article-content">
+                        <h3>Drinking less water daily spikes your stress hormone</h3>
+                        <p>Consistently drinking less than the recommended daily amount of water can lead to suboptimal hydration, often shown by darker, more concentrated urine and reduced output. Research has associated habitual low fluid intake with a greater metabolic, renal, and cardiovascular disease risk. Chronic low water intake may increase water-regulating hormones, such as arginine vasopressin (AVP), which can increase the release of the stress hormone cortisol.</p>
+                        <a href="https://www.news-medical.net/news/20250926/Drinking-less-water-daily-spikes-your-stress-hormone.aspx">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="../Images\ImageForAppNote_5926_45929244684085655849-620x480.webp"alt="image for article cancer"style="height: 290px;width:auto;">
+                    </div>
+                    <div class="article-content">
+                        <h3>How advanced imaging is helping decode breast cancer resistance</h3>
+                        <p>For decades, tamoxifen has been a cornerstone treatment. It works by blocking these hormone receptors and disrupting the downstream signaling that supports cancer growthBut not all patients respond well. A significant number develop resistance to tamoxifen, leaving clinicians with fewer treatment options and unresolved questions.Now, new research is offering some insight. Scientists have identified that the loss of a tumor-suppressor protein called FRMD8 may contribute to this resistance. When FRMD8 is missing, the tumor environment begins to change in ways that appear to reduce the drug’s effectiveness.This finding was made possible thanks to advanced imaging and analysis tools from TissueGnostics. These technologies allowed the research team to examine breast tissue with remarkable precision—revealing subtle changes that had previously gone undetected, and helping to clarify how resistance to tamoxifen can develop.</p>
+                        <a href="https://www.news-medical.net/whitepaper/20250929/How-advanced-imaging-is-helping-decode-breast-cancer-resistance.aspx">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Life Lift Hub Health Center</h3>
+                    <p>Your trusted guide to health information and resources, supporting the UN Sustainable Development Goals for global health.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#emergency">Emergency Resources</a>
+                    <a href="#local-care">Find Local Care</a>
+                    <a href="#health-tools">Health Tools</a>
+                    <a href="#health-library">Health Library</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> health@lifelifthub.org</p>
+                    <p><i class="fas fa-phone"></i> (800) 555-HELP</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Wellness Ave, Health City, HC 12345</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Life Lift Hub. All rights reserved. This information is for educational purposes only and is not a substitute for professional medical advice.</p>
+            </div>
+        </div>
+    </footer>
+     <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+    </script>
+     <script>
+        // BMI Calculator Functionality
+        document.getElementById('calculate-bmi').addEventListener('click', function() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const resultDiv = document.getElementById('bmi-result');
+            
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                resultDiv.innerHTML = '<p style="color: var(--danger);">Please enter valid height and weight values.</p>';
+                resultDiv.style.display = 'block';
+                return;
+            }
+            
+            // Calculate BMI (weight in kg / (height in m)^2)
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+            const roundedBmi = bmi.toFixed(1);
+            
+            // Determine BMI category
+            let category = '';
+            let color = '';
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                color = 'var(--warning)';
+            } else if (bmi < 25) {
+                category = 'Normal weight';
+                color = 'var(--success)';
+            } else if (bmi < 30) {
+                category = 'Overweight';
+                color = 'var(--warning)';
+            } else {
+                category = 'Obese';
+                color = 'var(--danger)';
+            }
+            
+            resultDiv.innerHTML = `
+                <h4>Your BMI: <span style="color: ${color};">${roundedBmi}</span></h4>
+                <p>Category: <strong style="color: ${color};">${category}</strong></p>
+                <p><small>Note: BMI is a screening tool, not a diagnostic of body fatness or health.</small></p>
+            `;
+            resultDiv.style.display = 'block';
+        });
+        
+        // Clinic Finder Functionality (simulated)
+        document.getElementById('search-clinics').addEventListener('click', function() {
+            const zipcode = document.getElementById('zipcode').value;
+            const city = document.getElementById('city').value;
+            const resultsDiv = document.querySelector('.results');
+            
+            if (!zipcode && !city) {
+                resultsDiv.innerHTML = '<p style="color: var(--danger);">Please enter a ZIP code or city name.</p>';
+                return;
+            }
+            
+            // Simulate API call with sample data
+            resultsDiv.innerHTML = `
+                <h3>Health Centers Near ${zipcode || city}</h3>
+                <div class="result-item">
+                    <h4>Community Health Center</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, ${zipcode || city}</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-info-circle"></i> Sliding fee scale available. Services: Primary care, dental, mental health.</p>
+                </div>
+                <div class="result-item">
+                    <h4>Neighborhood Family Clinic</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 456 Oak Avenue, ${zipcode || city}</p>
+                    <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                    <p><i class="fas fa-info-circle"></i> Accepts most insurance plans. Services: Pediatrics, women's health, immunizations.</p>
+                </div>
+                <div class="result-item">
+                    <h4>Urban Wellness Center</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 789 Pine Road, ${zipcode || city}</p>
+                    <p><i class="fas fa-phone"></i> (555) 456-7890</p>
+                    <p><i class="fas fa-info-circle"></i> Free screenings on first Thursday of each month. Services: Chronic disease management, nutrition counseling.</p>
+                </div>
+                <p><small><i class="fas fa-exclamation-circle"></i> This is a demonstration. In a real implementation, this would connect to the HRSA API.</small></p>
+            `;
+        });
+        
+        // Simple animation for page elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.helpline-card, .tool-card, .article-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+    </body>
+</html>
